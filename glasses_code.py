@@ -46,11 +46,3 @@ except KeyboardInterrupt:
 finally:
     GPIO.cleanup()
     print("GPIO cleaned up and program exited.")
-# This code captures an image when a button is pressed, processes it using a CRNN model,
-# and uses text-to-speech to read the recognized text aloud. It uses the RPi.GPIO library for button input,
-# OpenCV for image processing, and a custom CRNN model for text recognition.
-# The espeakng library is used for text-to-speech functionality.
-# Ensure you have the necessary libraries installed:
-# pip install torch torchvision opencv-python espeakng RPi.GPIO
-# Ensure you have the CRNN model and utils module available in your project.
-# The model should be trained and saved as 'crnn_trained.pth' in the 'model' directory.
