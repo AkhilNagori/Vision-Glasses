@@ -18,7 +18,7 @@ model = CRNN(32, 1, len(charset) + 1, 256).to(device)
 model.load_state_dict(torch.load('crnn_iam.pth', map_location=device))
 model.eval()
 
-image = Image.open('science_fair_2025-main/handwritten_text.png').convert('L')
+image = Image.open('training/handwritten_text.png').convert('L')
 image = transform(image).unsqueeze(0).to(device)
 
 with torch.no_grad():

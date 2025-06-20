@@ -126,7 +126,7 @@ transform = transforms.Compose([
     transforms.Normalize((0.5,), (0.5,))
 ])
 
-dataset = OCRDataset('science_fair_2025-main/data/labels.txt', transform, converter)
+dataset = OCRDataset('training/data/labels.txt', transform, converter)
 dataloader = DataLoader(dataset, batch_size=32, shuffle=True, collate_fn=collate_fn)
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
