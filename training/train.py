@@ -129,7 +129,7 @@ transform = transforms.Compose([
 dataset = OCRDataset('training/data/labels.txt', transform, converter)
 dataloader = DataLoader(dataset, batch_size=32, shuffle=True, collate_fn=collate_fn)
 
-device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+device = torch.device('cpu')
 model = CRNN(32, 1, len(charset) + 1, 256).to(device)
 criterion = nn.CTCLoss(blank=0)
 optimizer = optim.Adam(model.parameters(), lr=0.001)
